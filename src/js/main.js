@@ -35,22 +35,20 @@ function setupFaqAccordion() {
   });
 }
 
-// Mostrar Botón Flotante de WhatsApp al scrollear
+// Control de visibilidad del Botón Flotante de WhatsApp al scrollear
 function setupScrollVisibility() {
   const whatsappFloat = document.querySelector('.whatsapp-float');
-  if (!whatsappFloat) return;
 
-  function onScroll() {
-    const scrollY = window.scrollY || window.pageYOffset;
-    if (scrollY > 100) {
-      whatsappFloat.classList.add('visible');
+  const handleScroll = () => {
+    if (window.scrollY > 150) {
+      if (whatsappFloat) whatsappFloat.classList.add('visible');
     } else {
-      whatsappFloat.classList.remove('visible');
+      if (whatsappFloat) whatsappFloat.classList.remove('visible');
     }
-  }
+  };
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 }
 
 // Navegación Responsive con Animación & Telón de Fondo (Backdrop)

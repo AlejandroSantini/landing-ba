@@ -35,23 +35,22 @@ function setupFaqAccordion() {
   });
 }
 
-// Ocultar Navbar y Botón Flotante de WhatsApp en la vista inicial, mostrándolos al scrollear
+// Mostrar Botón Flotante de WhatsApp al scrollear
 function setupScrollVisibility() {
-  const header = document.querySelector('.header');
   const whatsappFloat = document.querySelector('.whatsapp-float');
+  if (!whatsappFloat) return;
 
-  const handleScroll = () => {
-    if (window.scrollY > 90) {
-      if (header) header.classList.add('visible');
-      if (whatsappFloat) whatsappFloat.classList.add('visible');
+  function onScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > 100) {
+      whatsappFloat.classList.add('visible');
     } else {
-      if (header) header.classList.remove('visible');
-      if (whatsappFloat) whatsappFloat.classList.remove('visible');
+      whatsappFloat.classList.remove('visible');
     }
-  };
+  }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 // Navegación Responsive con Animación & Telón de Fondo (Backdrop)

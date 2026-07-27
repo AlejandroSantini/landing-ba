@@ -1,0 +1,46 @@
+/* ==========================================================================
+   SOLUXER DESIGN SYSTEM TOKENS (Fiel al PDF Brújula de Marca)
+   ========================================================================== */
+
+:root {
+  /* Paleta Cromática Fiel al PDF */
+  --color-blue-primary: #2350C5;      /* Azul principal de cabeceras del PDF */
+  --color-blue-header: #2852B5;       /* Azul de cabeceras de tablas */
+  --color-blue-dark: #1E3A8A;         /* Azul oscuro profundo */
+  --color-blue-hover: #1D4ED8;        /* Hover de botones */
+  --color-black-text: #1E293B;        /* Texto principal corporativo */
+  --color-black-dark: #0F172A;        /* Negro para títulos */
+  --color-gray-bg: #F8FAFC;           /* Fondo gris claro neutro */
+  --color-gray-card: #FFFFFF;         /* Fondo blanco de tarjetas */
+  --color-gray-border: #CBD5E1;       /* Bordes definidos de tablas y tarjetas */
+  --color-gray-text: #475569;         /* Texto secundario de alta legibilidad */
+  --color-gray-num: #94A3B8;          /* Color para números grandes 01, 02... */
+  --color-celeste-brand: #38BDF8;     /* Celeste de acentos */
+  --color-celeste-bg: #F0F9FF;        /* Fondo sutil celeste */
+  --color-white: #FFFFFF;
+
+  /* Tipografía Oficial */
+  --font-family-primary: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Pesos de Fuente */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Escala de Espaciado y Layout */
+  --container-max-width: 1140px;
+  --header-height: 80px;              /* Header compacto y sobrio */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Sombras y Transiciones */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(35, 80, 197, 0.08);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.1);
+
+  --transition-fast: 0.2s ease-in-out;
+}

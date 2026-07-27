@@ -1,0 +1,37 @@
+# Soluxer — Tu Partner en Tecnología
+
+> Un equipo. Un responsable. Sin excusas.
+
+## Información de la Empresa & Contacto
+- **Nombre comercial**: Soluxer
+- **Eslogan**: Un equipo. Un responsable. Sin excusas.
+- **Email Comercial**: ventas@batec.com.ar
+- **Teléfono / WhatsApp**: +54 9 3446 548884 (03446 15-548884)
+- **Identidad**: Tecnología e infraestructura de seguridad para empresas, PYMEs e industrias que no pueden darse el lujo de que algo falle.
+- **Ubicación Base**: Urdinarrain, Entre Ríos, Argentina.
+- **Modelo de Operación**: 100% equipo propio, sin subcontratación ni tercerización de soporte.
+
+## Servicios Especializados B2B
+1. **Infraestructura de Redes & Servidores Críticos**:
+   - Cableado estructurado (Cat 6A/7), fibra óptica.
+   - Configuración de servidores con alta disponibilidad y redundancia.
+   - VPN corporativas seguras.
+   - Firewall perimetral y segmentación de redes industriales.
+
+2. **Cámaras IP & Control de Acceso**:
+   - Sistemas de videovigilancia IP en alta definición.
+   - Control de acceso biométrico, tarjetas RFID y molinetes industriales.
+   - Almacenamiento continuo NVR/NAS.
+
+3. **Mantenimiento Preventivo & Continuidad Operativa**:
+   - Relevamientos y diagnósticos preventivos sin costo.
+   - Monitoreo proactivo de infraestructura.
+   - Soporte directo de los mismos técnicos que armaron el sistema.
+
+4. **Automatización & Control de Procesos**:
+   - Automatización de accesos vehiculares y portones industriales.
+
+## Criterios y Propuesta de Valor
+- **Evidencia antes que promesa**: Trabajo respaldado por métricas y funcionamiento comprobado.
+- **Profundidad antes que amplitud**: Servicios especializados en problemas complejos de infraestructura.
+- **Contacto B2B Directo**: Diagnóstico Técnico sin compromiso para evaluar requerimientos.

@@ -208,7 +208,7 @@ function setupForm() {
       console.error('Error FormSubmit:', err);
       if (responseMsg) {
         responseMsg.className = 'form-response-msg error';
-        responseMsg.innerHTML = '❌ Ocurrió un inconveniente. También podés consultarnos directamente por <a href="https://wa.me/5493446548884" target="_blank" style="text-decoration:underline;">WhatsApp</a>.';
+        responseMsg.innerHTML = 'Ocurrió un inconveniente. También podés consultarnos directamente por <a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" style="text-decoration:underline;">WhatsApp</a>.';
         responseMsg.style.display = 'block';
       }
     } finally {

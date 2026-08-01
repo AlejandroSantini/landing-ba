@@ -468,9 +468,12 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: calc(var(--header-height) + 1.75rem);
-    padding-bottom: 2.75rem;
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 3.25rem;
     min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /* Hero centrado en mobile */

@@ -37,3 +37,6 @@ pnpm-debug.log*
 # Archivos PDF y documentos
 *.pdf
 
+# Archivos multimedia (superan el límite de GitHub y deben ir a CDN/Hosting de videos)
+*.mov
+*.mp4

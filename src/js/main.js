@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   setupHeroSlider();
   setupCoverageMap();
   setupModal();
@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Hero Carretera — Control de 3 secciones por los pillar chips
 function setupHeroSlider() {
-  const slides = document.querySelectorAll('.hero-slide');
-  const pillarChips = document.querySelectorAll('.pillar-chip');
+  const slides = document.querySelectorAll(".hero-slide");
+  const pillarChips = document.querySelectorAll(".pillar-chip");
   if (!slides.length || !pillarChips.length) return;
 
   let current = 0;
@@ -18,13 +18,13 @@ function setupHeroSlider() {
   const INTERVAL_MS = 5500;
 
   const goToSlide = (index) => {
-    slides[current]?.classList.remove('active');
-    pillarChips[current]?.classList.remove('active');
+    slides[current]?.classList.remove("active");
+    pillarChips[current]?.classList.remove("active");
 
     current = index % slides.length;
 
-    slides[current]?.classList.add('active');
-    pillarChips[current]?.classList.add('active');
+    slides[current]?.classList.add("active");
+    pillarChips[current]?.classList.add("active");
   };
 
   const startAuto = () => {
@@ -42,7 +42,7 @@ function setupHeroSlider() {
   };
 
   pillarChips.forEach((chip, idx) => {
-    chip.addEventListener('click', (e) => {
+    chip.addEventListener("click", (e) => {
       e.preventDefault();
       const pIdx = parseInt(chip.dataset.pillar ?? idx, 10);
       goToSlide(pIdx);
@@ -53,24 +53,23 @@ function setupHeroSlider() {
   startAuto();
 }
 
-
 // Mapa de Cobertura Interactivo (chips de ciudades mueven el mapa)
 function setupCoverageMap() {
-  const chips = document.querySelectorAll('#coverage-chips .coverage-chip');
-  const mapIframe = document.getElementById('coverage-map');
+  const chips = document.querySelectorAll("#coverage-chips .coverage-chip");
+  const mapIframe = document.getElementById("coverage-map");
   if (!chips.length || !mapIframe) return;
 
-  const API_KEY = 'AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8';
+  const API_KEY = "AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8";
 
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
       const query = chip.dataset.query;
-      const zoom = chip.dataset.zoom || '12';
+      const zoom = chip.dataset.zoom || "12";
       if (!query) return;
 
       // Marcar chip activo
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
 
       // Actualizar iframe src
       mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${query}&zoom=${zoom}`;
@@ -80,28 +79,28 @@ function setupCoverageMap() {
 
 // Acordeón de Preguntas Frecuentes (FAQ)
 function setupFaqAccordion() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
+  const faqQuestions = document.querySelectorAll(".faq-question");
+  faqQuestions.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
       if (!item) return;
-      const isActive = item.classList.contains('active');
+      const isActive = item.classList.contains("active");
 
       // Cerrar otros abiertos (comportamiento acordeón limpio)
-      document.querySelectorAll('.faq-item.active').forEach(openItem => {
+      document.querySelectorAll(".faq-item.active").forEach((openItem) => {
         if (openItem !== item) {
-          openItem.classList.remove('active');
-          const openQuestion = openItem.querySelector('.faq-question');
-          if (openQuestion) openQuestion.setAttribute('aria-expanded', 'false');
+          openItem.classList.remove("active");
+          const openQuestion = openItem.querySelector(".faq-question");
+          if (openQuestion) openQuestion.setAttribute("aria-expanded", "false");
         }
       });
 
       if (isActive) {
-        item.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
+        item.classList.remove("active");
+        btn.setAttribute("aria-expanded", "false");
       } else {
-        item.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
+        item.classList.add("active");
+        btn.setAttribute("aria-expanded", "true");
       }
     });
   });
@@ -109,8 +108,8 @@ function setupFaqAccordion() {
 
 // Control de visibilidad del Header Fijo (CTA Bar) y Botón Flotante de WhatsApp al scrollear
 function setupScrollVisibility() {
-  const whatsappFloat = document.querySelector('.whatsapp-float');
-  const ctaBar = document.querySelector('.cta-bar');
+  const whatsappFloat = document.querySelector(".whatsapp-float");
+  const ctaBar = document.querySelector(".cta-bar");
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -118,58 +117,60 @@ function setupScrollVisibility() {
     // Header fijo: solo visible al empezar a scrollear (> 80px)
     if (ctaBar) {
       if (scrollY > 80) {
-        ctaBar.classList.add('visible');
+        ctaBar.classList.add("visible");
       } else {
-        ctaBar.classList.remove('visible');
+        ctaBar.classList.remove("visible");
       }
     }
 
     // Botón flotante WhatsApp
     if (whatsappFloat) {
       if (scrollY > 150) {
-        whatsappFloat.classList.add('visible');
+        whatsappFloat.classList.add("visible");
       } else {
-        whatsappFloat.classList.remove('visible');
+        whatsappFloat.classList.remove("visible");
       }
     }
   };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
 }
 
 // Modal Diagnóstico
 function setupModal() {
-  const overlay = document.getElementById('modal-overlay');
-  const openBtns = document.querySelectorAll('.open-modal-btn');
-  const closeBtn = document.getElementById('modal-close-btn');
+  const overlay = document.getElementById("modal-overlay");
+  const openBtns = document.querySelectorAll(".open-modal-btn");
+  const closeBtn = document.getElementById("modal-close-btn");
 
   if (!overlay) return;
 
   const openModal = () => {
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    const firstInput = overlay.querySelector('input, select');
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    const firstInput = overlay.querySelector("input, select");
     if (firstInput) firstInput.focus();
   };
 
   const closeModal = () => {
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
   };
 
-  openBtns.forEach(btn => btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal();
-  }));
+  openBtns.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    }),
+  );
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', (e) => {
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", (e) => {
     if (e.target === overlay) closeModal();
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("active")) {
       closeModal();
     }
   });
@@ -177,15 +178,15 @@ function setupModal() {
 
 // Formulario de Contacto FormSubmit AJAX (Prueba: alejandro.j.santini@gmail.com)
 function setupForm() {
-  const form = document.getElementById('diagnostico-form');
-  const submitBtn = document.getElementById('form-submit-btn');
-  const responseMsg = document.getElementById('form-response-msg');
+  const form = document.getElementById("diagnostico-form");
+  const submitBtn = document.getElementById("form-submit-btn");
+  const responseMsg = document.getElementById("form-response-msg");
   if (!form) return;
 
   // CORREO DESTINO (Cambiar a ventas@batec.com.ar cuando desees pasar a producción)
-  const targetEmail = 'alejandro.j.santini@gmail.com';
+  const targetEmail = "alejandro.j.santini@gmail.com";
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     // Filtro anti-spam Honeypot
@@ -194,75 +195,80 @@ function setupForm() {
       return;
     }
 
-    const company = form.querySelector('#company_name').value.trim();
-    const phone = form.querySelector('#phone_number').value.trim();
-    const need = form.querySelector('#need_type').value;
-    const message = form.querySelector('#notes')?.value.trim() || 'Sin comentarios adicionales';
+    const company = form.querySelector("#company_name").value.trim();
+    const phone = form.querySelector("#phone_number").value.trim();
+    const need = form.querySelector("#need_type").value;
+    const message =
+      form.querySelector("#notes")?.value.trim() ||
+      "Sin comentarios adicionales";
 
     if (!company || !phone || !need) return;
 
     // Estado visual de carga
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Enviando solicitud...</span>';
+      submitBtn.innerHTML = "<span>Enviando solicitud...</span>";
     }
     if (responseMsg) {
-      responseMsg.style.display = 'none';
-      responseMsg.className = 'form-response-msg';
+      responseMsg.style.display = "none";
+      responseMsg.className = "form-response-msg";
     }
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${targetEmail}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: `Nuevo Diagnóstico Técnico B2B: ${company}`,
+            _template: "table",
+            _captcha: "false",
+            "Empresa / Comercio": company,
+            "Teléfono / WhatsApp": phone,
+            "Servicio de Interés": need,
+            "Detalle o Consulta": message,
+          }),
         },
-        body: JSON.stringify({
-          _subject: `Nuevo Diagnóstico Técnico B2B: ${company}`,
-          _template: 'table',
-          _captcha: 'false',
-          'Empresa / Comercio': company,
-          'Teléfono / WhatsApp': phone,
-          'Servicio de Interés': need,
-          'Detalle o Consulta': message
-        })
-      });
+      );
 
       const data = await response.json();
 
       if (response.ok && data.success === "true") {
         if (responseMsg) {
-          responseMsg.className = 'form-response-msg success';
-          responseMsg.innerHTML = '✅ <strong>¡Solicitud enviada con éxito!</strong> Recibirás la respuesta en tu correo a la brevedad.';
-          responseMsg.style.display = 'block';
+          responseMsg.className = "form-response-msg success";
+          responseMsg.innerHTML =
+            "✅ <strong>¡Solicitud enviada con éxito!</strong> Recibirás la respuesta en tu correo a la brevedad.";
+          responseMsg.style.display = "block";
         }
 
         form.reset();
 
         // Cerrar modal tras 3 segundos
         setTimeout(() => {
-          const overlay = document.getElementById('modal-overlay');
-          if (overlay) overlay.classList.remove('active');
-          document.body.style.overflow = '';
-          if (responseMsg) responseMsg.style.display = 'none';
+          const overlay = document.getElementById("modal-overlay");
+          if (overlay) overlay.classList.remove("active");
+          document.body.style.overflow = "";
+          if (responseMsg) responseMsg.style.display = "none";
         }, 3200);
-
       } else {
-        throw new Error(data.message || 'Error al enviar');
+        throw new Error(data.message || "Error al enviar");
       }
-
     } catch (err) {
-      console.error('Error FormSubmit:', err);
+      console.error("Error FormSubmit:", err);
       if (responseMsg) {
-        responseMsg.className = 'form-response-msg error';
-        responseMsg.innerHTML = 'Ocurrió un inconveniente. También podés consultarnos directamente por <a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" style="text-decoration:underline;">WhatsApp</a>.';
-        responseMsg.style.display = 'block';
+        responseMsg.className = "form-response-msg error";
+        responseMsg.innerHTML =
+          'Ocurrió un inconveniente. También podés consultarnos directamente por <a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" style="text-decoration:underline;">WhatsApp</a>.';
+        responseMsg.style.display = "block";
       }
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Enviar Solicitud</span>';
+        submitBtn.innerHTML = "<span>Enviar Solicitud</span>";
       }
     }
   });

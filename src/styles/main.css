@@ -356,7 +356,7 @@ button, input, select, textarea {
 }
 
 .hero-split-logo {
-  height: 120px;
+  height: 180px;
   max-width: 85vw;
   width: auto;
   margin-bottom: 1.5rem;
@@ -402,7 +402,7 @@ button, input, select, textarea {
   }
 
   .hero-split-logo {
-    height: 68px;
+    height: 110px;
     margin-bottom: 0.85rem;
   }
 
@@ -897,6 +897,14 @@ button, input, select, textarea {
   margin-top: 2.25rem;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .abonos-cta-wrap .btn {
+    white-space: nowrap;
+    font-size: 0.825rem;
+    padding: 0.75rem 1rem;
+  }
 }
 
 @media (max-width: 868px) {

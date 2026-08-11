@@ -1,10 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
-  setupNavigation();
+  setupHeroSlider();
+  setupCoverageMap();
   setupModal();
   setupForm();
   setupScrollVisibility();
   setupFaqAccordion();
 });
+
+// Hero Carretera — Control de 3 secciones por los pillar chips
+function setupHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const pillarChips = document.querySelectorAll('.pillar-chip');
+  if (!slides.length || !pillarChips.length) return;
+
+  let current = 0;
+  let autoTimer = null;
+  const INTERVAL_MS = 5500;
+
+  const goToSlide = (index) => {
+    slides[current]?.classList.remove('active');
+    pillarChips[current]?.classList.remove('active');
+
+    current = index % slides.length;
+
+    slides[current]?.classList.add('active');
+    pillarChips[current]?.classList.add('active');
+  };
+
+  const startAuto = () => {
+    stopAuto();
+    autoTimer = setInterval(() => {
+      goToSlide(current + 1);
+    }, INTERVAL_MS);
+  };
+
+  const stopAuto = () => {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  };
+
+  pillarChips.forEach((chip, idx) => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pIdx = parseInt(chip.dataset.pillar ?? idx, 10);
+      goToSlide(pIdx);
+      startAuto();
+    });
+  });
+
+  startAuto();
+}
+
+
+// Mapa de Cobertura Interactivo (chips de ciudades mueven el mapa)
+function setupCoverageMap() {
+  const chips = document.querySelectorAll('#coverage-chips .coverage-chip');
+  const mapIframe = document.getElementById('coverage-map');
+  if (!chips.length || !mapIframe) return;
+
+  const API_KEY = 'AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8';
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const query = chip.dataset.query;
+      const zoom = chip.dataset.zoom || '12';
+      if (!query) return;
+
+      // Marcar chip activo
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      // Actualizar iframe src
+      mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${query}&zoom=${zoom}`;
+    });
+  });
+}
 
 // Acordeón de Preguntas Frecuentes (FAQ)
 function setupFaqAccordion() {
@@ -35,59 +107,35 @@ function setupFaqAccordion() {
   });
 }
 
-// Control de visibilidad del Botón Flotante de WhatsApp al scrollear
+// Control de visibilidad del Header Fijo (CTA Bar) y Botón Flotante de WhatsApp al scrollear
 function setupScrollVisibility() {
   const whatsappFloat = document.querySelector('.whatsapp-float');
+  const ctaBar = document.querySelector('.cta-bar');
 
   const handleScroll = () => {
-    if (window.scrollY > 150) {
-      if (whatsappFloat) whatsappFloat.classList.add('visible');
-    } else {
-      if (whatsappFloat) whatsappFloat.classList.remove('visible');
+    const scrollY = window.scrollY;
+
+    // Header fijo: solo visible al empezar a scrollear (> 80px)
+    if (ctaBar) {
+      if (scrollY > 80) {
+        ctaBar.classList.add('visible');
+      } else {
+        ctaBar.classList.remove('visible');
+      }
+    }
+
+    // Botón flotante WhatsApp
+    if (whatsappFloat) {
+      if (scrollY > 150) {
+        whatsappFloat.classList.add('visible');
+      } else {
+        whatsappFloat.classList.remove('visible');
+      }
     }
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
-}
-
-// Navegación Responsive con Animación & Telón de Fondo (Backdrop)
-function setupNavigation() {
-  const toggleBtn = document.getElementById('mobile-toggle');
-  const navContainer = document.getElementById('nav-container');
-  const backdrop = document.getElementById('nav-backdrop');
-  if (!toggleBtn || !navContainer) return;
-
-  const openMenu = () => {
-    toggleBtn.classList.add('active');
-    navContainer.classList.add('active');
-    if (backdrop) backdrop.classList.add('active');
-    toggleBtn.setAttribute('aria-expanded', 'true');
-  };
-
-  const closeMenu = () => {
-    toggleBtn.classList.remove('active');
-    navContainer.classList.remove('active');
-    if (backdrop) backdrop.classList.remove('active');
-    toggleBtn.setAttribute('aria-expanded', 'false');
-  };
-
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = toggleBtn.classList.contains('active');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  if (backdrop) {
-    backdrop.addEventListener('click', closeMenu);
-  }
-
-  navContainer.querySelectorAll('.nav-link, .open-modal-btn').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
 }
 
 // Modal Diagnóstico

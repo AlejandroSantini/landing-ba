@@ -25,7 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://soluxer.com.ar/" />
   <meta property="og:title" content="Soluxer — Tecnología y Seguridad Electrónica en Entre Ríos" />
-  <meta property="og:description" content="Instalación de cámaras, redes y control de acceso para empresas. Base en Urdinarrain, Entre Ríos. Un equipo. Un responsable. Sin excusas." />
+  <meta property="og:description" content="Instalación de cámaras, redes y control de acceso para empresas. Base en Urdinarrain, Entre Ríos." />
   <meta property="og:image" content="https://soluxer.com.ar/Marca-08.png" />
 
   <!-- Stylesheets -->
@@ -40,7 +40,6 @@
       "name": "Soluxer",
       "image": "https://soluxer.com.ar/Marca-08.png",
       "description": "Instalación de cámaras de seguridad, redes, control de acceso y soporte técnico para empresas y comercios en Entre Ríos.",
-      "slogan": "Un equipo. Un responsable. Sin excusas.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pbro. Joannas 310",
@@ -57,7 +56,10 @@
         { "@type": "City", "name": "Concepción del Uruguay" },
         { "@type": "City", "name": "Gualeguaychú" },
         { "@type": "City", "name": "Rosario del Tala" },
-        { "@type": "City", "name": "Villaguay" }
+        { "@type": "City", "name": "Villaguay" },
+        { "@type": "City", "name": "Concordia" },
+        { "@type": "City", "name": "Diamante" },
+        { "@type": "City", "name": "Colón" }
       ]
     },
     {
@@ -66,42 +68,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Trabajan solo en Urdinarrain?",
+          "name": "¿Con qué contás si accedés a nuestros servicios?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Urdinarrain es nuestra base, pero trabajamos en un radio de 200 a 250 km. Eso incluye Concepción del Uruguay, Gualeguaychú, Rosario del Tala, Villaguay y localidades intermedias. Para clientes fuera de ese radio, evaluamos cada caso puntualmente."
+            "text": "Contás con un equipo técnico directo, sin intermediarios. Instalamos, configuramos y mantenemos los sistemas nosotros mismos. Tenés un solo contacto para todo: desde la primera visita técnica hasta el soporte post-instalación."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué diferencia tienen con otras empresas de cámaras o redes?",
+          "name": "¿En qué zonas y provincias opera Soluxer de forma presencial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No subcontratamos. El mismo equipo que instala es el que da soporte. Conocemos exactamente cómo está armado el sistema porque lo armamos nosotros. No hay intermediarios ni quien derive la responsabilidad."
+            "text": "Nuestra base está en Urdinarrain, Entre Ríos, y trabajamos de forma presencial en un radio de 200 a 250 km. Eso incluye Concepción del Uruguay, Gualeguaychú, Concordia, Colón, Diamante, Rosario del Tala, Villaguay y localidades intermedias. También llegamos a Salto, Uruguay, por frontera. Para clientes fuera de ese radio, evaluamos cada caso."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto tarda una instalación de cámaras?",
+          "name": "¿Cómo funciona el mantenimiento preventivo y los planes de abono?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende del tamaño y complejidad del lugar. En comercios pequeños puede resolverse en un día. En plantas industriales o instalaciones más complejas, trabajamos en etapas. Siempre hacemos una visita técnica previa para dimensionar bien el trabajo."
+            "text": "Ofrecemos revisiones periódicas del estado de cámaras, redes y equipos para detectar problemas antes de que se conviertan en paradas. Los planes de abono incluyen mantenimiento preventivo programado, soporte remoto prioritario y respuesta ante emergencias técnicas."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Hacen soporte remoto o solo presencial?",
+          "name": "¿Qué diferencia a Soluxer de un técnico independiente o una empresa grande de Buenos Aires?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hacemos ambos. El soporte remoto permite resolver problemas de configuración o acceso sin necesidad de ir hasta el lugar. Para problemas de hardware o instalaciones nuevas, trabajamos de forma presencial."
+            "text": "No subcontratamos ni derivamos. El mismo equipo que instala es el que da soporte. Conocemos cada sistema porque lo armamos nosotros. A diferencia de una empresa grande de Buenos Aires, estamos en la zona, conocemos las particularidades del interior y respondemos con la velocidad de un equipo propio."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Trabajan con pymes o solo con empresas grandes?",
+          "name": "¿Qué pasa si un sistema crítico falla fuera del horario comercial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trabajamos con todo tipo de organizaciones: agroindustrias, comercios, empresas medianas y organismos. El criterio no es el tamaño sino que el problema sea real y que podamos resolverlo bien."
+            "text": "Dependiendo del tipo de contrato o plan de abono, ofrecemos soporte fuera de horario para emergencias críticas. El primer paso siempre es un diagnóstico remoto para determinar si se puede resolver a distancia o si requiere intervención presencial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo es el proceso desde el primer contacto hasta la instalación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primero hacemos una visita técnica al lugar para entender el problema y dimensionar la solución. Después presentamos una propuesta concreta con equipamiento, plazos y costos. Una vez aprobada, coordinamos la instalación y dejamos todo funcionando con capacitación incluida."
           }
         }
       ]
@@ -111,73 +121,83 @@
 </head>
 <body>
 
-  <!-- Header / Navbar (siempre visible) -->
-  <header class="header">
+  <!-- Barra CTA Fija (solo logo + botón Consulta Técnica) -->
+  <header class="cta-bar" id="cta-bar">
     <div class="container">
-      <div class="nav-wrapper">
+      <div class="cta-bar-inner">
         <a href="#" aria-label="Soluxer Inicio">
-          <img src="./Marca Sin Fondo-14.png" alt="Soluxer - Seguridad Electrónica e IT en Entre Ríos" class="logo-img" width="240" height="56" />
+          <img src="./Marca Sin Fondo-14.png" alt="Soluxer - Seguridad Electrónica e IT en Entre Ríos" class="cta-bar-logo" width="240" height="56" />
         </a>
-
-        <!-- Botón Hamburguesa Animado -->
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <button class="btn btn-primary open-modal-btn" id="cta-bar-btn">
+          <span>Consulta Técnica</span>
         </button>
-
-        <!-- Contenedor Desplegable del Menú -->
-        <nav class="nav-container" id="nav-container">
-          <ul class="nav-menu" id="nav-menu">
-            <li><a href="#propuesta" class="nav-link">Por qué Soluxer</a></li>
-            <li><a href="#servicios" class="nav-link">Servicios</a></li>
-            <li><a href="#faq" class="nav-link">Preguntas Frecuentes</a></li>
-            <li><a href="#cobertura" class="nav-link">Cobertura</a></li>
-            <li class="nav-btn-item">
-              <button class="btn btn-primary open-modal-btn">
-                <span>Consulta Técnica</span>
-              </button>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Telón de fondo oscuro para el menú desplegable -->
-  <div class="nav-backdrop" id="nav-backdrop"></div>
-
   <main>
 
-    <!-- Hero Principal -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
+    <!-- Hero Carretera con 3 Secciones, cada una con 4 fotos verticales -->
+    <section class="hero-split" id="hero-slider" aria-label="Soluxer — Tecnología y Seguridad Electrónica">
+      <div class="hero-slides-container">
 
-            <!-- Logo oficial Soluxer -->
-            <img src="./Marca Sin Fondo A.png" alt="Soluxer - Seguridad Electrónica e IT en Entre Ríos" class="hero-brand-logo-large" width="520" height="130" />
-
-            <div class="hero-slogan-box">
-              Un equipo. Un responsable. Sin excusas.
-            </div>
-
-            <h1 class="hero-title">
-              Tecnología y seguridad electrónica de Urdinarrain, Entre Ríos para toda Argentina.
-            </h1>
-
-            <p class="hero-description">
-              Instalamos y mantenemos cámaras, redes, control de acceso y equipos en empresas, comercios y agroindustrias. No mandamos subcontratistas. El mismo equipo que instala es el que da soporte.
-            </p>
-
-            <div class="hero-actions">
-              <button class="btn btn-primary open-modal-btn">
-                <span>Solicitar Consulta Técnica</span>
-              </button>
-
-            </div>
+        <!-- Sección 0: Seguridad Electrónica (4 fotos verticales) -->
+        <div class="hero-slide active" data-slide="0">
+          <div class="hero-split-bg" aria-hidden="true">
+            <div class="hero-col"><img src="./images-web/vert-cctv.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/instalacion-domo-ptz-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/equipamiento-dahua-stock-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/lectura-patentes-lpr.jpg" alt="" /></div>
+          </div>
+          <div class="hero-split-overlay" aria-hidden="true"></div>
+          <div class="hero-split-content">
+            <img src="./Marca Sin Fondo.png" alt="Soluxer" class="hero-split-logo" width="340" height="84" />
+            <h1 class="hero-split-title">Seguridad Electrónica</h1>
+            <p class="hero-split-desc">Cámaras IP, domos PTZ 360°, lectura de patentes LPR y control de accesos centralizado para empresas e industrias.</p>
+            <button class="btn btn-primary open-modal-btn">
+              <span>Solicitar Consulta Técnica</span>
+            </button>
           </div>
         </div>
+
+        <!-- Sección 1: IT e Infraestructura (4 fotos verticales) -->
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-split-bg" aria-hidden="true">
+            <div class="hero-col"><img src="./images-web/vert-redes.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/empalme-fibra-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/hero-s2-bandeja.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/rack-servidores-vertical.jpg" alt="" /></div>
+          </div>
+          <div class="hero-split-overlay" aria-hidden="true"></div>
+          <div class="hero-split-content">
+            <img src="./Marca Sin Fondo.png" alt="Soluxer" class="hero-split-logo" width="340" height="84" />
+            <h1 class="hero-split-title">IT e Infraestructura</h1>
+            <p class="hero-split-desc">Cableado estructurado, empalmes de fibra óptica, racks corporativos y enlaces inalámbricos de alta disponibilidad.</p>
+            <button class="btn btn-primary open-modal-btn">
+              <span>Solicitar Consulta Técnica</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sección 2: Mantenimiento (4 fotos verticales) -->
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-split-bg" aria-hidden="true">
+            <div class="hero-col"><img src="./images-web/tecnico-poste-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/movil-soluxer-atardecer-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/barrera-vehicular-vertical.jpg" alt="" /></div>
+            <div class="hero-col"><img src="./images-web/fachada-central-urdinarrain-vertical.jpg" alt="" /></div>
+          </div>
+          <div class="hero-split-overlay" aria-hidden="true"></div>
+          <div class="hero-split-content">
+            <img src="./Marca Sin Fondo.png" alt="Soluxer" class="hero-split-logo" width="340" height="84" />
+            <h1 class="hero-split-title">Mantenimiento y Soporte</h1>
+            <p class="hero-split-desc">Asistencia técnica directa con equipo propio, atención en sitio y soporte preventivo continuo en toda la región.</p>
+            <button class="btn btn-primary open-modal-btn">
+              <span>Solicitar Consulta Técnica</span>
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -185,68 +205,48 @@
     <section class="pillars-strip">
       <div class="container">
         <div class="pillars-inner">
-          <div class="pillar-chip">
+          <button class="pillar-chip active" data-pillar="0" aria-label="Ver Seguridad Electrónica">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span>Seguridad Electrónica</span>
-          </div>
+          </button>
           <div class="pillar-divider"></div>
-          <div class="pillar-chip">
+          <button class="pillar-chip" data-pillar="1" aria-label="Ver IT e Infraestructura">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             <span>IT e Infraestructura</span>
-          </div>
+          </button>
           <div class="pillar-divider"></div>
-          <div class="pillar-chip">
+          <button class="pillar-chip" data-pillar="2" aria-label="Ver Mantenimiento">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             <span>Mantenimiento</span>
-          </div>
+          </button>
         </div>
       </div>
     </section>
 
     <!-- Por qué Soluxer / Propuesta de Valor -->
-    <section class="values-section section-padding" id="propuesta">
+    <section class="intro-section section-padding" id="propuesta">
       <div class="container">
         <div class="section-tag">Por qué Soluxer</div>
-        <h2 class="section-title">Ningún problema es igual a otro. Tampoco la solución.</h2>
-        <p class="section-subtitle">
-          Trabajamos con la misma infraestructura y tecnología que las empresas más grandes del rubro, a medida de cada cliente.
-        </p>
+        <h2 class="section-title">Tecnología de primer nivel, desde el interior</h2>
 
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-num-badge">01</div>
-            <h3 class="value-title">Instalamos y mantenemos nosotros</h3>
-            <p class="value-desc">No hay subcontratistas. El mismo equipo que instala es el que responde cuando algo falla. Conocemos exactamente cómo está armado el sistema porque lo armamos nosotros.</p>
-          </div>
+        <div class="intro-body">
+          <p>Instalamos y mantenemos cámaras de seguridad, redes corporativas y control de acceso para empresas y agroindustrias desde nuestra base en Urdinarrain hacia toda la región.</p>
 
-          <div class="value-card">
-            <div class="value-num-badge">02</div>
-            <h3 class="value-title">Tecnología de primer nivel desde el interior</h3>
-            <p class="value-desc">Trabajamos con la misma infraestructura que usan las empresas más grandes del rubro. Urdinarrain no es una limitación: es nuestra base y nuestra identidad.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-num-badge">03</div>
-            <h3 class="value-title">Sin promesas vacías</h3>
-            <p class="value-desc">No decimos nada que no podamos respaldar con un trabajo concreto. Cada propuesta parte de un diagnóstico real, no de una estimación genérica.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-num-badge">04</div>
-            <h3 class="value-title">Discreción y rigurosidad técnica</h3>
-            <p class="value-desc">No hacemos ruido por hacer ruido. Somos la pieza que hace que el sistema de tu empresa no se rompa, y cuando se rompe, que se resuelva rápido.</p>
-          </div>
+          <p>Trabajamos con equipo 100% propio, sin subcontratación. Los mismos técnicos que instalan son los que brindan soporte y mantenimiento directo.</p>
         </div>
+
       </div>
     </section>
+
+
 
     <!-- Servicios Clave -->
     <section class="services-section section-padding" id="servicios">
       <div class="container">
         <div class="section-tag-dark">Servicios</div>
-        <h2 class="section-title-dark">Profundidad, no amplitud</h2>
+        <h2 class="section-title-dark">Nuestros Servicios</h2>
         <p class="section-subtitle-dark">
-          Resolvemos en profundidad las áreas tecnológicas críticas de tu empresa o comercio.
+          Soluciones en seguridad electrónica e infraestructura IT para empresas y comercios.
         </p>
 
         <div class="services-list">
@@ -255,6 +255,9 @@
             <div class="service-row-left">
               <span class="service-row-tag">01 / SEGURIDAD PERIMETRAL</span>
               <h3 class="service-row-title">Cámaras de seguridad IP</h3>
+            </div>
+            <div class="service-row-media">
+              <img src="./images-web/service-cctv.jpg" alt="Montaje de cámara domo PTZ Hikvision" loading="lazy" width="600" height="400" />
             </div>
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Cámaras analógicas de baja resolución, grabadores obsoletos que no permiten ver imágenes útiles cuando se necesitan.</p>
@@ -272,6 +275,9 @@
               <span class="service-row-tag">02 / INFRAESTRUCTURA IT</span>
               <h3 class="service-row-title">Redes y soporte técnico remoto</h3>
             </div>
+            <div class="service-row-media">
+              <img src="./images-web/service-redes.jpg" alt="Rack de servidores e infraestructura de red" loading="lazy" width="600" height="400" />
+            </div>
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Internet lento en planta, equipos que fallan sin diagnóstico claro, sin nadie que responda de forma directa y rápida.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Diseñamos e instalamos la red, configuramos los equipos y brindamos soporte remoto. Un solo contacto para todo.</p>
@@ -287,6 +293,9 @@
             <div class="service-row-left">
               <span class="service-row-tag">03 / CONTROL DE INGRESO</span>
               <h3 class="service-row-title">Control de acceso</h3>
+            </div>
+            <div class="service-row-media">
+              <img src="./images-web/service-acceso.jpg" alt="Sistema de lectura automática de patentes LPR" loading="lazy" width="600" height="400" />
             </div>
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Zonas sensibles sin control de quién entra y cuándo, sin registro de movimientos de personal o vehículos.</p>
@@ -304,6 +313,9 @@
               <span class="service-row-tag">04 / CONTINUIDAD OPERATIVA</span>
               <h3 class="service-row-title">Mantenimiento preventivo</h3>
             </div>
+            <div class="service-row-media">
+              <img src="./images-web/service-mantenimiento.jpg" alt="Mantenimiento preventivo de barreras e instalaciones" loading="lazy" width="600" height="400" />
+            </div>
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Sistemas instalados hace años sin revisión, fallas que se descubren tarde, sin nadie que haga seguimiento preventivo.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Revisiones periódicas del estado de la red, cámaras y equipos para detectar problemas antes de que se conviertan en paradas.</p>
@@ -319,11 +331,56 @@
       </div>
     </section>
 
+    <!-- Destacado Abonos Mensuales -->
+    <section class="abonos-section section-padding" id="abonos">
+      <div class="container">
+        <div class="abonos-header">
+          <div class="section-tag-dark">Planes de Mantenimiento</div>
+          <h2 class="section-title-dark">Tres niveles de cobertura</h2>
+          <p class="section-subtitle-dark">
+            Según la dimensión de tu instalación y el nivel de protección que necesitás.
+          </p>
+        </div>
+
+        <div class="abonos-cards-grid">
+          <!-- Esencial -->
+          <div class="abono-card">
+            <span class="abono-name">Esencial</span>
+            <div class="abono-price">Desde $125.000 <span class="abono-period">/ mes</span></div>
+            <p class="abono-desc">Comercios, oficinas y hogares con instalación simple de cámaras, alarma o red.</p>
+          </div>
+
+          <!-- Integral (Featured) -->
+          <div class="abono-card featured">
+            <span class="abono-badge">Más elegido</span>
+            <span class="abono-name">Integral</span>
+            <div class="abono-price">Desde $250.000 <span class="abono-period">/ mes</span></div>
+            <p class="abono-desc">PYMEs con múltiples sistemas: cámaras, red, control de acceso o servidor.</p>
+          </div>
+
+          <!-- Total -->
+          <div class="abono-card">
+            <span class="abono-name">Total</span>
+            <div class="abono-price">A convenir <span class="abono-period">según instalación</span></div>
+            <p class="abono-desc">Empresas, industrias y organismos con infraestructura crítica o gran escala.</p>
+          </div>
+        </div>
+
+        <div class="abonos-cta-wrap">
+          <a href="https://abonosmensualessoluxer.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>Ver tabla comparativa y detalle de abonos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Video de Instalación Real -->
     <section class="video-section section-padding">
       <div class="container">
-        <div class="section-tag">Trabajo real</div>
-        <h2 class="section-title">Una instalación, de principio a fin</h2>
+        <div class="section-tag">Trabajo en obra</div>
+        <h2 class="section-title">Instalación real</h2>
 
         <div class="video-wrapper">
           <video
@@ -341,8 +398,7 @@
       </div>
     </section>
 
-    <!-- Preguntas Frecuentes (FAQ Accordion) -->
-
+    <!-- Preguntas Frecuentes (FAQ Accordion) — 6 preguntas de Maia -->
     <section class="faq-section section-padding" id="faq">
       <div class="container">
         <div class="section-tag">Preguntas Frecuentes</div>
@@ -355,51 +411,61 @@
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>¿Trabajan solo en Urdinarrain?</span>
+              <span>¿Con qué contás si accedés a nuestros servicios?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>No. Urdinarrain es nuestra base, pero trabajamos en un radio de 200 a 250 km. Eso incluye Concepción del Uruguay, Gualeguaychú, Rosario del Tala, Villaguay y localidades intermedias. Para clientes fuera de ese radio, evaluamos cada caso puntualmente.</p>
+              <p>Contás con un equipo técnico directo, sin intermediarios. Instalamos, configuramos y mantenemos los sistemas nosotros mismos. Tenés un solo contacto para todo: desde la primera visita técnica hasta el soporte post-instalación.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>¿Qué diferencia tienen con otras empresas de cámaras o redes?</span>
+              <span>¿En qué zonas y provincias opera Soluxer de forma presencial?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>No subcontratamos. El mismo equipo que instala es el que da soporte. Conocemos exactamente cómo está armado el sistema porque lo armamos nosotros. No hay intermediarios ni quien derive la responsabilidad.</p>
+              <p>Nuestra base está en Urdinarrain, Entre Ríos, y trabajamos de forma presencial en un radio de 200 a 250 km. Eso incluye Concepción del Uruguay, Gualeguaychú, Concordia, Colón, Diamante, Rosario del Tala, Villaguay y localidades intermedias. También llegamos a Salto, Uruguay, por frontera. Para clientes fuera de ese radio, evaluamos cada caso.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>¿Cuánto tarda una instalación de cámaras?</span>
+              <span>¿Cómo funciona el mantenimiento preventivo y los planes de abono?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Depende del tamaño y complejidad del lugar. En comercios pequeños puede resolverse en un día. En plantas industriales o instalaciones más complejas, trabajamos en etapas. Siempre hacemos una visita técnica previa para dimensionar bien el trabajo.</p>
+              <p>Ofrecemos revisiones periódicas del estado de cámaras, redes y equipos para detectar problemas antes de que se conviertan en paradas. Los planes de abono incluyen mantenimiento preventivo programado, soporte remoto prioritario y respuesta ante emergencias técnicas.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>¿Hacen soporte remoto o solo presencial?</span>
+              <span>¿Qué diferencia a Soluxer de un técnico independiente o una empresa grande de Buenos Aires?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Hacemos ambos. El soporte remoto permite resolver problemas de configuración o acceso sin necesidad de ir hasta el lugar. Para problemas de hardware o instalaciones nuevas, trabajamos de forma presencial.</p>
+              <p>No subcontratamos ni derivamos. El mismo equipo que instala es el que da soporte. Conocemos cada sistema porque lo armamos nosotros. A diferencia de una empresa grande de Buenos Aires, estamos en la zona, conocemos las particularidades del interior y respondemos con la velocidad de un equipo propio.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>¿Trabajan con pymes o solo con empresas grandes?</span>
+              <span>¿Qué pasa si un sistema crítico falla fuera del horario comercial?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Trabajamos con todo tipo de organizaciones: agroindustrias, comercios, empresas medianas y organismos. El criterio no es el tamaño sino que el problema sea real y que podamos resolverlo bien.</p>
+              <p>Dependiendo del tipo de contrato o plan de abono, ofrecemos soporte fuera de horario para emergencias críticas. El primer paso siempre es un diagnóstico remoto para determinar si se puede resolver a distancia o si requiere intervención presencial.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Cómo es el proceso desde el primer contacto hasta la instalación?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Primero hacemos una visita técnica al lugar para entender el problema y dimensionar la solución. Después presentamos una propuesta concreta con equipamiento, plazos y costos. Una vez aprobada, coordinamos la instalación y dejamos todo funcionando con capacitación incluida.</p>
             </div>
           </div>
 
@@ -407,50 +473,49 @@
       </div>
     </section>
 
-    <!-- Zona de Cobertura -->
+    <!-- Zona de Cobertura (con Google Maps embed + chips de ciudades) -->
     <section class="coverage-section section-padding" id="cobertura">
       <div class="container">
         <div class="section-tag">Zona de Cobertura</div>
-        <h2 class="section-title">Base en Urdinarrain. Alcance regional.</h2>
+        <h2 class="section-title">Desde Urdinarrain, a toda la región</h2>
         <p class="section-subtitle">
-          Trabajamos de forma presencial en un radio de 200 a 250 km desde Urdinarrain, Entre Ríos.
+          Trabajamos de forma presencial en un radio de 200 a 250 km desde nuestra base en Urdinarrain, Entre Ríos.
         </p>
 
-        <div class="coverage-grid">
-          <div class="coverage-box">
-            <div class="coverage-title">Ciudades con atención presencial habitual</div>
-            <ul class="coverage-cities">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Urdinarrain <span>(base)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Concepción del Uruguay
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Gualeguaychú
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Rosario del Tala
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Villaguay
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Localidades intermedias de Entre Ríos
-              </li>
-            </ul>
-            <p class="coverage-note">Para clientes fuera de ese radio, evaluamos cada caso.</p>
-            <div style="margin-top: 1.5rem;">
-              <button class="btn btn-coverage open-modal-btn">
-                <span>Consultar disponibilidad en mi zona</span>
-              </button>
+        <div class="coverage-layout">
+          <!-- Mapa Google Maps -->
+          <div class="coverage-map-wrap">
+            <iframe
+              id="coverage-map"
+              class="coverage-map-iframe"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Urdinarrain,Entre+Rios,Argentina&zoom=10"
+              width="600"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación Soluxer — Urdinarrain, Entre Ríos"
+            ></iframe>
+          </div>
+
+          <!-- Detalle de ciudades + CTA -->
+          <div class="coverage-detail">
+            <div class="coverage-chips" id="coverage-chips">
+              <button class="coverage-chip active" data-query="Urdinarrain,Entre+Rios,Argentina" data-zoom="10"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Urdinarrain (base)</button>
+              <button class="coverage-chip" data-query="Concepcion+del+Uruguay,Entre+Rios,Argentina" data-zoom="12">Concepción del Uruguay</button>
+              <button class="coverage-chip" data-query="Gualeguaychu,Entre+Rios,Argentina" data-zoom="12">Gualeguaychú</button>
+              <button class="coverage-chip" data-query="Concordia,Entre+Rios,Argentina" data-zoom="12">Concordia</button>
+              <button class="coverage-chip" data-query="Colon,Entre+Rios,Argentina" data-zoom="12">Colón</button>
+              <button class="coverage-chip" data-query="Diamante,Entre+Rios,Argentina" data-zoom="12">Diamante</button>
+              <button class="coverage-chip" data-query="Rosario+del+Tala,Entre+Rios,Argentina" data-zoom="12">Rosario del Tala</button>
+              <button class="coverage-chip" data-query="Villaguay,Entre+Rios,Argentina" data-zoom="12">Villaguay</button>
+              <button class="coverage-chip" data-query="Salto,Uruguay" data-zoom="12">Salto, Uruguay</button>
             </div>
+            <p class="coverage-note">Para clientes fuera de ese radio, evaluamos cada caso.</p>
+            <button class="btn btn-primary open-modal-btn">
+              <span>Consultar disponibilidad en mi zona</span>
+            </button>
           </div>
         </div>
       </div>
@@ -513,14 +578,10 @@
     </svg>
   </a>
 
-  <!-- Footer -->
+  <!-- Footer (simplificado: logo + desc + contacto, sin secciones) -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-slogan">
-        Un equipo. Un responsable. Sin excusas.
-      </div>
-
-      <div class="footer-grid">
+      <div class="footer-grid-simple">
         <div>
           <img src="./Marca Sin Fondo.png" alt="Soluxer Logo Blanco" class="footer-logo" width="340" height="84" />
           <p class="footer-text">
@@ -529,22 +590,11 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Secciones</div>
+          <div class="footer-col-title">Contacto & Ubicación</div>
           <ul class="footer-links">
-            <li><a href="#propuesta">Por qué Soluxer</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#faq">Preguntas Frecuentes</a></li>
-            <li><a href="#cobertura">Zona de Cobertura</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Contacto &amp; Ubicación</div>
-          <ul class="footer-links">
-            <li><span>📍 Pbro. Joannas 310, E2826 Urdinarrain, Entre Ríos</span></li>
-            <li><a href="mailto:ventas@batec.com.ar">📧 ventas@batec.com.ar</a></li>
-            <li><a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" rel="noopener">📱 03446 15-548884</a></li>
-
+            <li><span class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Pbro. Joannas 310, E2826 Urdinarrain, Entre Ríos</span></li>
+            <li><a href="mailto:ventas@batec.com.ar" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> ventas@batec.com.ar</a></li>
+            <li><a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" rel="noopener" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 03446 15-548884</a></li>
           </ul>
         </div>
       </div>

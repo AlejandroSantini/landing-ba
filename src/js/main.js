@@ -7,11 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFaqAccordion();
 });
 
-// Hero Carretera — Control de 3 secciones por los pillar chips
+// Hero Carretera — Control de 3 secciones por flechas, marcador inferior y gesto de deslizar (swipe)
 function setupHeroSlider() {
+  const heroSection = document.getElementById("hero-slider");
   const slides = document.querySelectorAll(".hero-slide");
-  const pillarChips = document.querySelectorAll(".pillar-chip");
-  if (!slides.length || !pillarChips.length) return;
+  const dots = document.querySelectorAll(".hero-dot");
+  const prevBtn = document.getElementById("hero-prev-btn");
+  const nextBtn = document.getElementById("hero-next-btn");
+  const slidesContainer = document.querySelector(".hero-slides-container");
+
+  if (!slides.length) return;
 
   let current = 0;
   let autoTimer = null;
@@ -19,12 +24,12 @@ function setupHeroSlider() {
 
   const goToSlide = (index) => {
     slides[current]?.classList.remove("active");
-    pillarChips[current]?.classList.remove("active");
+    dots[current]?.classList.remove("active");
 
-    current = index % slides.length;
+    current = (index + slides.length) % slides.length;
 
     slides[current]?.classList.add("active");
-    pillarChips[current]?.classList.add("active");
+    dots[current]?.classList.add("active");
   };
 
   const startAuto = () => {
@@ -41,14 +46,69 @@ function setupHeroSlider() {
     }
   };
 
-  pillarChips.forEach((chip, idx) => {
-    chip.addEventListener("click", (e) => {
+  // Eventos de flechas
+  prevBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    goToSlide(current - 1);
+    startAuto();
+  });
+
+  nextBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    goToSlide(current + 1);
+    startAuto();
+  });
+
+  // Eventos de dots
+  dots.forEach((dot, idx) => {
+    dot.addEventListener("click", (e) => {
       e.preventDefault();
-      const pIdx = parseInt(chip.dataset.pillar ?? idx, 10);
-      goToSlide(pIdx);
+      const targetIdx = parseInt(dot.dataset.slide ?? idx, 10);
+      goToSlide(targetIdx);
       startAuto();
     });
   });
+
+  // Soporte de Deslizar (Touch Swipe & Mouse Drag)
+  let startX = 0;
+  let endX = 0;
+
+  const handleSwipe = () => {
+    const diffX = startX - endX;
+    const threshold = 50; // Mínimo 50px de movimiento para cambiar
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        // Deslizar izquierda -> Siguiente
+        goToSlide(current + 1);
+      } else {
+        // Deslizar derecha -> Anterior
+        goToSlide(current - 1);
+      }
+      startAuto();
+    }
+  };
+
+  if (slidesContainer || heroSection) {
+    const target = slidesContainer || heroSection;
+
+    target.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    target.addEventListener("touchend", (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    }, { passive: true });
+
+    target.addEventListener("mousedown", (e) => {
+      startX = e.clientX;
+    });
+
+    target.addEventListener("mouseup", (e) => {
+      endX = e.clientX;
+      handleSwipe();
+    });
+  }
 
   startAuto();
 }

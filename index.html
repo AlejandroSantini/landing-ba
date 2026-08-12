@@ -199,27 +199,20 @@
         </div>
 
       </div>
-    </section>
 
-    <!-- Franja de Pilares -->
-    <section class="pillars-strip">
-      <div class="container">
-        <div class="pillars-inner">
-          <button class="pillar-chip active" data-pillar="0" aria-label="Ver Seguridad Electrónica">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span>Seguridad Electrónica</span>
-          </button>
-          <div class="pillar-divider"></div>
-          <button class="pillar-chip" data-pillar="1" aria-label="Ver IT e Infraestructura">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span>IT e Infraestructura</span>
-          </button>
-          <div class="pillar-divider"></div>
-          <button class="pillar-chip" data-pillar="2" aria-label="Ver Mantenimiento">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            <span>Mantenimiento</span>
-          </button>
-        </div>
+      <!-- Flechas de Navegación -->
+      <button class="hero-arrow hero-arrow-prev" id="hero-prev-btn" aria-label="Sección anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="hero-arrow hero-arrow-next" id="hero-next-btn" aria-label="Siguiente sección">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Marcador Inferior de 3 Secciones (Dots) -->
+      <div class="hero-dots" id="hero-dots">
+        <button class="hero-dot active" data-slide="0" aria-label="Ir a Seguridad Electrónica"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Ir a IT e Infraestructura"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Ir a Mantenimiento y Soporte"></button>
       </div>
     </section>
 
@@ -264,6 +257,7 @@
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Cámaras analógicas de baja resolución, grabadores obsoletos que no permiten ver imágenes útiles cuando se necesitan.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Instalamos sistemas IP de alta definición con grabación continua, acceso remoto desde celular y almacenamiento local o en nube.</p>
+              <p class="service-row-result"><strong>Resultado:</strong> Control del espacio en tiempo real, estés donde estés.</p>
             </div>
           </div>
 
@@ -280,6 +274,7 @@
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Internet lento en planta, equipos que fallan sin diagnóstico claro, sin nadie que responda de forma directa y rápida.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Diseñamos e instalamos la red, configuramos los equipos y brindamos soporte remoto. Un solo contacto para todo.</p>
+              <p class="service-row-result"><strong>Resultado:</strong> Tu red y tus equipos funcionan al día, sin que nadie de tu empresa tenga que ocuparse de eso.</p>
             </div>
           </div>
 
@@ -296,6 +291,7 @@
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Zonas sensibles sin control de quién entra y cuándo, sin registro de movimientos de personal o vehículos.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Instalamos sistemas de control de acceso con tarjetas, huella o PIN, integrados a portones y con registro de presentismo.</p>
+              <p class="service-row-result"><strong>Resultado:</strong> Control de ingreso preciso, sin depender de vigilancia manual.</p>
             </div>
           </div>
 
@@ -312,6 +308,7 @@
             <div class="service-row-right">
               <p class="service-row-problem"><strong>El problema:</strong> Sistemas instalados hace años sin revisión, fallas que se descubren tarde, sin nadie que haga seguimiento preventivo.</p>
               <p class="service-row-desc"><strong>Lo que hacemos:</strong> Revisiones periódicas del estado de la red, cámaras y equipos para detectar problemas antes de que se conviertan en paradas.</p>
+              <p class="service-row-result"><strong>Resultado:</strong> Tranquilidad de saber que tus sistemas están vigilados y listos para responder.</p>
             </div>
           </div>
 
@@ -467,7 +464,7 @@
         <div class="section-tag">Zona de Cobertura</div>
         <h2 class="section-title">Desde Urdinarrain, a toda la región</h2>
         <p class="section-subtitle">
-          Trabajamos de forma presencial en un radio de 200 a 250 km desde nuestra base en Urdinarrain, Entre Ríos.
+          Con base en Urdinarrain, cubrimos toda la costa del Río Uruguay —incluyendo seguridad de frontera en Salto/Concordia— y llegamos a cualquier punto de Argentina donde tu empresa lo necesite.
         </p>
 
         <div class="coverage-layout">
@@ -495,10 +492,16 @@
               <button class="coverage-chip" data-query="Gualeguaychu,Entre+Rios,Argentina" data-zoom="12">Gualeguaychú</button>
               <button class="coverage-chip" data-query="Concordia,Entre+Rios,Argentina" data-zoom="12">Concordia</button>
               <button class="coverage-chip" data-query="Colon,Entre+Rios,Argentina" data-zoom="12">Colón</button>
+              <button class="coverage-chip" data-query="Salto,Uruguay" data-zoom="12">Salto, Uruguay</button>
+              <button class="coverage-chip" data-query="Basavilbaso,Entre+Rios,Argentina" data-zoom="12">Basavilbaso</button>
+              <button class="coverage-chip" data-query="Victoria,Entre+Rios,Argentina" data-zoom="12">Victoria</button>
               <button class="coverage-chip" data-query="Diamante,Entre+Rios,Argentina" data-zoom="12">Diamante</button>
               <button class="coverage-chip" data-query="Rosario+del+Tala,Entre+Rios,Argentina" data-zoom="12">Rosario del Tala</button>
               <button class="coverage-chip" data-query="Villaguay,Entre+Rios,Argentina" data-zoom="12">Villaguay</button>
-              <button class="coverage-chip" data-query="Salto,Uruguay" data-zoom="12">Salto, Uruguay</button>
+              <button class="coverage-chip" data-query="Zarate,Buenos+Aires,Argentina" data-zoom="12">Zárate</button>
+              <button class="coverage-chip" data-query="Campana,Buenos+Aires,Argentina" data-zoom="12">Campana</button>
+              <button class="coverage-chip" data-query="Pergamino,Buenos+Aires,Argentina" data-zoom="12">Pergamino</button>
+              <button class="coverage-chip" data-query="Rosario,Santa+Fe,Argentina" data-zoom="12">Rosario</button>
             </div>
             <p class="coverage-note">Para clientes fuera de ese radio, evaluamos cada caso.</p>
             <button class="btn btn-primary open-modal-btn">
@@ -583,6 +586,7 @@
             <li><span class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Pbro. Joannas 310, E2826 Urdinarrain, Entre Ríos</span></li>
             <li><a href="mailto:ventas@batec.com.ar" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> ventas@batec.com.ar</a></li>
             <li><a href="https://wa.me/5493446548884?text=%C2%A1Hola!%20%F0%9F%91%8B%20Estuve%20mirando%20la%20web%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" target="_blank" rel="noopener" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 03446 15-548884</a></li>
+            <li><span class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Lun a Vie 8:00-12:00 / 15:00-19:00 (Soporte remoto de emergencia para abonos activos)</span></li>
           </ul>
         </div>
       </div>

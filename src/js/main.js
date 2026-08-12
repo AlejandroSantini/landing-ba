@@ -127,11 +127,9 @@ function setupCoverageMap() {
       const zoom = chip.dataset.zoom || "12";
       if (!query) return;
 
-      // Marcar chip activo
       chips.forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
 
-      // Actualizar iframe src
       mapIframe.src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${query}&zoom=${zoom}`;
     });
   });

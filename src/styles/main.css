@@ -384,10 +384,18 @@ button, input, select, textarea {
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 
-/* En Mobile: 2x2 grilla de fotos llenando el 100% de la pantalla sin huecos */
-@media (max-width: 640px) {
+/* En Mobile: 2x2 grilla de fotos llenando el 100% de la pantalla sin huecos y sin saltos de tamaño al scrollear */
+@media (max-width: 768px) {
   .hero-split {
+    height: 100vh;
+    height: 100svh;
     min-height: 520px;
+  }
+
+  .hero-col img,
+  .hero-slide.active .hero-col img {
+    transform: none !important;
+    transition: none !important;
   }
 
   .hero-split-bg {
@@ -497,18 +505,9 @@ button, input, select, textarea {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-arrow {
-    width: 38px;
-    height: 38px;
-  }
-
-  .hero-arrow-prev {
-    left: 0.6rem;
-  }
-
-  .hero-arrow-next {
-    right: 0.6rem;
+    display: none;
   }
 
   .hero-dots {
@@ -1124,12 +1123,67 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.coverage-chips-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.coverage-chips-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.coverage-chips-label {
+  font-size: 0.825rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coverage-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.775rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-blue-primary);
+  background: rgba(35, 80, 197, 0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  animation: pulseHint 2s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  50% { opacity: 0.75; transform: translateX(3px); }
+}
+
+.coverage-chips-container {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .coverage-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .coverage-chip {
@@ -1144,6 +1198,7 @@ button, input, select, textarea {
   border: 1px solid var(--color-gray-border);
   border-radius: 100px;
   cursor: pointer;
+  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
@@ -1170,11 +1225,64 @@ button, input, select, textarea {
 @media (max-width: 768px) {
   .coverage-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .coverage-map-iframe {
-    height: 280px;
+    height: 260px;
+  }
+
+  .coverage-scroll-hint {
+    display: inline-flex;
+  }
+
+  .coverage-chips-container {
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .coverage-chips {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    padding: 0.35rem 1.5rem 0.75rem 0.1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-blue-primary) rgba(35, 80, 197, 0.12);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .coverage-chips::-webkit-scrollbar {
+    height: 4px;
+    display: block;
+  }
+
+  .coverage-chips::-webkit-scrollbar-track {
+    background: rgba(35, 80, 197, 0.08);
+    border-radius: 4px;
+  }
+
+  .coverage-chips::-webkit-scrollbar-thumb {
+    background: var(--color-blue-primary);
+    border-radius: 4px;
+  }
+
+  .coverage-chip {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .coverage-detail .btn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 

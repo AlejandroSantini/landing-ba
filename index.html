@@ -10,7 +10,14 @@
   <meta name="keywords" content="Soluxer, cámaras de seguridad Urdinarrain, redes corporativas Entre Ríos, control de acceso, soporte técnico remoto, seguridad electrónica Gualeguaychú, infraestructura IT" />
   <meta name="author" content="Soluxer" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F172A" />
   <link rel="canonical" href="https://soluxer.com.ar/" />
+
+  <!-- Local GEO Meta Tags -->
+  <meta name="geo.region" content="AR-E" />
+  <meta name="geo.placename" content="Urdinarrain, Entre Ríos" />
+  <meta name="geo.position" content="-32.6881;-58.8953" />
+  <meta name="ICBM" content="-32.6881, -58.8953" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="./Marca Sin Fondo-15.webp" />
@@ -21,12 +28,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://soluxer.com.ar/" />
   <meta property="og:title" content="Soluxer — Tecnología y Seguridad Electrónica en Entre Ríos" />
   <meta property="og:description" content="Instalación de cámaras, redes y control de acceso para empresas. Base en Urdinarrain, Entre Ríos." />
   <meta property="og:image" content="https://soluxer.com.ar/Marca-08.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Soluxer — Tecnología y Seguridad Electrónica en Entre Ríos" />
+  <meta name="twitter:description" content="Instalación de cámaras de seguridad, redes corporativas y control de acceso para empresas." />
+  <meta name="twitter:image" content="https://soluxer.com.ar/Marca-08.webp" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./src/styles/main.css" />
@@ -39,7 +52,7 @@
       "@type": "LocalBusiness",
       "name": "Soluxer",
       "image": "https://soluxer.com.ar/Marca-08.webp",
-      "description": "Instalación de cámaras de seguridad, redes, control de acceso y soporte técnico para empresas y comercios en Entre Ríos.",
+      "description": "Instalación de cámaras de seguridad IP, redes corporativas, control de acceso biométrico y soporte técnico para empresas y comercios en Entre Ríos.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pbro. Joannas 310",
@@ -48,9 +61,29 @@
         "addressRegion": "Entre Ríos",
         "addressCountry": "AR"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -32.6881,
+        "longitude": -58.8953
+      },
       "url": "https://soluxer.com.ar/",
       "telephone": "+54-9-3446-548884",
       "email": "ventas@batec.com.ar",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "12:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "15:00",
+          "closes": "19:00"
+        }
+      ],
       "areaServed": [
         { "@type": "City", "name": "Urdinarrain" },
         { "@type": "City", "name": "Concepción del Uruguay" },
@@ -145,10 +178,10 @@
         <!-- Sección 0: Seguridad Electrónica (4 fotos verticales) -->
         <div class="hero-slide active" data-slide="0">
           <div class="hero-split-bg" aria-hidden="true">
-            <div class="hero-col"><img src="./images-web/vert-cctv.webp" alt="" loading="eager" fetchpriority="high" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/salto-concordia-20250822.webp" alt="" loading="eager" fetchpriority="high" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/equipamiento-dahua-stock-vertical.webp" alt="" loading="eager" fetchpriority="high" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/lectura-patentes-lpr.webp" alt="" loading="eager" fetchpriority="high" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/vert-cctv.webp" alt="Instalación de cámaras de seguridad CCTV Hikvision Dahua en Entre Ríos" loading="eager" fetchpriority="high" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/salto-concordia-20250822.webp" alt="Monitoreo de seguridad electrónica en paso fronterizo Salto Concordia" loading="eager" fetchpriority="high" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/equipamiento-dahua-stock-vertical.webp" alt="Equipamiento de videovigilancia y cámaras IP Dahua" loading="eager" fetchpriority="high" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/lectura-patentes-lpr.webp" alt="Sistema de lectura de patentes vehicular LPR para proyectos corporativos" loading="eager" fetchpriority="high" decoding="async" /></div>
           </div>
           <div class="hero-split-overlay" aria-hidden="true"></div>
           <div class="hero-split-content">
@@ -164,10 +197,10 @@
         <!-- Sección 1: IT e Infraestructura (4 fotos verticales) -->
         <div class="hero-slide" data-slide="1">
           <div class="hero-split-bg" aria-hidden="true">
-            <div class="hero-col"><img src="./images-web/salto-concordia-20250828.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/salto-concordia-20250821.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/salto-concordia-20250924.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/rack-servidores-vertical.webp" alt="" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/salto-concordia-20250828.webp" alt="Infraestructura de red y cableado estructurado en planta" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/salto-concordia-20250821.webp" alt="Empalme de fibra óptica y conectividad para empresas" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/salto-concordia-20250924.webp" alt="Instalación de gabinetes y redes corporativas de alta disponibilidad" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/rack-servidores-vertical.webp" alt="Rack de servidores, switches de red y respaldo de energía" loading="lazy" decoding="async" /></div>
           </div>
           <div class="hero-split-overlay" aria-hidden="true"></div>
           <div class="hero-split-content">
@@ -183,10 +216,10 @@
         <!-- Sección 2: Mantenimiento (4 fotos verticales) -->
         <div class="hero-slide" data-slide="2">
           <div class="hero-split-bg" aria-hidden="true">
-            <div class="hero-col"><img src="./images-web/tecnico-poste-vertical.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/movil-soluxer-atardecer-vertical.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/barrera-vehicular-vertical.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="hero-col"><img src="./images-web/parque-industrial-urdinarrain-20230814.webp" alt="" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/tecnico-poste-vertical.webp" alt="Técnico oficial de Soluxer trabajando sobre poste de telecomunicaciones" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/movil-soluxer-atardecer-vertical.webp" alt="Móvil técnico de asistencia presencial Soluxer en Entre Ríos" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/barrera-vehicular-vertical.webp" alt="Barrera vehicular automatizada y control de ingreso industrial" loading="lazy" decoding="async" /></div>
+            <div class="hero-col"><img src="./images-web/parque-industrial-urdinarrain-20230814.webp" alt="Obra de seguridad e IT en Parque Industrial Urdinarrain" loading="lazy" decoding="async" /></div>
           </div>
           <div class="hero-split-overlay" aria-hidden="true"></div>
           <div class="hero-split-content">

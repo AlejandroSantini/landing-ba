@@ -5,7 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
   setupForm();
   setupScrollVisibility();
   setupFaqAccordion();
+  setupServiceAccordion();
 });
+
+function setupServiceAccordion() {
+  const serviceRows = document.querySelectorAll(".service-row");
+  serviceRows.forEach(row => {
+    row.addEventListener("click", (e) => {
+      // Avoid toggling if clicking on a button or link inside the row
+      if (e.target.closest("a") || e.target.closest("button")) {
+        return;
+      }
+      // Close others (optional, but good for accordion)
+      serviceRows.forEach(otherRow => {
+        if (otherRow !== row) {
+          otherRow.classList.remove("expanded");
+        }
+      });
+      row.classList.toggle("expanded");
+    });
+  });
+}
 
 // Hero Carretera — Control de 3 secciones por flechas, marcador inferior y gesto de deslizar (swipe)
 function setupHeroSlider() {

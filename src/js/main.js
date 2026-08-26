@@ -261,8 +261,8 @@ function setupForm() {
   const responseMsg = document.getElementById("form-response-msg");
   if (!form) return;
 
-  // CORREO DESTINO (Cambiar a ventas@batec.com.ar cuando desees pasar a producción)
-  const targetEmail = "alejandro.j.santini@gmail.com";
+  // CORREO DESTINO
+  const targetEmail = "ventas@basrl.com.ar";
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();

@@ -14,13 +14,34 @@ function setupVideoFacade() {
   const facade = document.getElementById("video-facade");
   if (!facade) return;
 
+  // Calienta la conexión con YouTube apenas el usuario muestra intención (hover/touch),
+  // así al hacer click el video arranca antes en vez de sentirse "trabado".
+  const warmUpYoutube = () => {
+    ["https://www.youtube-nocookie.com", "https://i.ytimg.com", "https://www.google.com"].forEach((href) => {
+      if (document.querySelector(`link[rel="preconnect"][href="${href}"]`)) return;
+      const link = document.createElement("link");
+      link.rel = "preconnect";
+      link.href = href;
+      link.crossOrigin = "";
+      document.head.appendChild(link);
+    });
+  };
+  facade.addEventListener("pointerenter", warmUpYoutube, { once: true });
+  facade.addEventListener("touchstart", warmUpYoutube, { once: true, passive: true });
+
   facade.addEventListener("click", () => {
     const videoId = facade.dataset.videoId;
     if (!videoId) return;
+    warmUpYoutube();
+
+    const spinner = document.createElement("div");
+    spinner.className = "video-facade-spinner";
+    facade.appendChild(spinner);
+    facade.querySelector(".video-facade-play")?.remove();
 
     const iframe = document.createElement("iframe");
-    iframe.className = "install-video-iframe";
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    iframe.className = "install-video-iframe is-loading";
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
     iframe.title = "Instalación Real Soluxer — Seguridad Electrónica e IT";
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute(
@@ -28,9 +49,14 @@ function setupVideoFacade() {
       "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
     );
     iframe.allowFullscreen = true;
+    iframe.addEventListener("load", () => {
+      iframe.classList.remove("is-loading");
+      facade.classList.add("is-playing");
+      facade.querySelector(".video-facade-thumb")?.remove();
+      spinner.remove();
+    });
 
-    facade.classList.remove("video-facade");
-    facade.replaceChildren(iframe);
+    facade.appendChild(iframe);
   }, { once: true });
 }
 

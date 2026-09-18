@@ -1013,15 +1013,27 @@ button, input, select, textarea {
 }
 
 .install-video-iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
   display: block;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.install-video-iframe.is-loading {
+  opacity: 0;
 }
 
 .video-facade {
   position: relative;
   cursor: pointer;
+}
+
+.video-facade.is-playing {
+  cursor: default;
 }
 
 .video-facade-thumb {
@@ -1030,6 +1042,23 @@ button, input, select, textarea {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-facade-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: video-facade-spin 0.8s linear infinite;
+}
+
+@keyframes video-facade-spin {
+  to { transform: rotate(360deg); }
 }
 
 .video-facade-play {

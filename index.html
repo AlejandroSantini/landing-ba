@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18257548181"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Stylesheets (cargado primero: bloquea render, tiene que descubrirse cuanto antes) -->
+  <link rel="stylesheet" href="./src/styles/main.css" />
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'AW-18257548181');
+
+    window.addEventListener('load', function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18257548181';
+      document.head.appendChild(s);
+    });
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Primary Meta Tags -->
   <title>Soluxer — Tecnología y Seguridad Electrónica en Entre Ríos para toda Argentina</title>
@@ -24,6 +34,9 @@
   <!-- Preload LCP Image -->
   <link rel="preload" href="./images-web/Slider1.webp" as="image" type="image/webp" />
 
+  <!-- Preload Work Sans (self-hosted, variable, cubre pesos 400-800) -->
+  <link rel="preload" href="/fonts/work-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+
   <!-- Local GEO Meta Tags -->
   <meta name="geo.region" content="AR-E" />
   <meta name="geo.placename" content="Urdinarrain, Entre Ríos" />
@@ -33,11 +46,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="./Marca Sin Fondo-15.webp" />
   <link rel="apple-touch-icon" href="./Marca Sin Fondo-15.webp" />
-
-  <!-- Google Fonts: Work Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -51,9 +59,6 @@
   <meta name="twitter:title" content="Soluxer — Tecnología y Seguridad Electrónica en Entre Ríos" />
   <meta name="twitter:description" content="Instalación de cámaras de seguridad, redes corporativas y control de acceso para empresas." />
   <meta name="twitter:image" content="https://soluxer.com.ar/Marca-08.webp" />
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="./src/styles/main.css" />
 
   <!-- Schema.org JSON-LD (LocalBusiness + FAQPage) -->
   <script type="application/ld+json">
@@ -422,15 +427,17 @@
         <div class="section-tag">Trabajo en obra</div>
         <h2 class="section-title">Instalación real</h2>
 
-        <div class="video-wrapper">
-          <iframe
-            class="install-video-iframe"
-            src="https://www.youtube.com/embed/FQH5B1khEMo"
-            title="Instalación Real Soluxer — Seguridad Electrónica e IT"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+        <div class="video-wrapper video-facade" id="video-facade" data-video-id="FQH5B1khEMo">
+          <img
+            src="https://i.ytimg.com/vi/FQH5B1khEMo/hqdefault.jpg"
+            alt="Instalación Real Soluxer — Seguridad Electrónica e IT"
+            class="video-facade-thumb"
+            loading="lazy"
+            decoding="async"
+          />
+          <button class="video-facade-play" type="button" aria-label="Reproducir video de instalación real">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
         </div>
       </div>
     </section>

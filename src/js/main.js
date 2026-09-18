@@ -6,7 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollVisibility();
   setupFaqAccordion();
   setupServiceAccordion();
+  setupVideoFacade();
 });
+
+// Facade del video de YouTube: evita cargar el iframe (y su JS pesado) hasta que el usuario hace click
+function setupVideoFacade() {
+  const facade = document.getElementById("video-facade");
+  if (!facade) return;
+
+  facade.addEventListener("click", () => {
+    const videoId = facade.dataset.videoId;
+    if (!videoId) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.className = "install-video-iframe";
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    iframe.title = "Instalación Real Soluxer — Seguridad Electrónica e IT";
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+    );
+    iframe.allowFullscreen = true;
+
+    facade.classList.remove("video-facade");
+    facade.replaceChildren(iframe);
+  }, { once: true });
+}
 
 function setupServiceAccordion() {
   const serviceRows = document.querySelectorAll(".service-row");

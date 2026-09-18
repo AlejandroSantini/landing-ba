@@ -2,6 +2,14 @@
    SOLUXER DESIGN SYSTEM TOKENS (Fiel al PDF Brújula de Marca)
    ========================================================================== */
 
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/work-sans-latin.woff2') format('woff2');
+}
+
 :root {
   /* Paleta Cromática Fiel al PDF */
   --color-blue-primary: #2350C5;      /* Azul principal de cabeceras del PDF */

@@ -16,9 +16,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Evita que el header fijo tape el inicio de la sección al saltar a un ancla (#servicios, #faq, etc.) */
+/* Evita que el header fijo tape el inicio de la sección al saltar a un ancla (#servicios, #faq, etc.).
+   Solo compensa la altura del header: el padding propio de la sección ya da el respiro visual. */
 section[id] {
-  scroll-margin-top: calc(var(--header-height) + 1rem);
+  scroll-margin-top: var(--header-height);
 }
 
 body {
